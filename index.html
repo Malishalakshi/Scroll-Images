@@ -4,15 +4,83 @@
   <meta charset="UTF-8">
   <title>Image sticky</title>
   <style>
+    *{
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      font-style: normal;
+      color: black;
+      font-weight: normal;
+      cursor: default;
+    }
+    body{
+      font-family: Ubuntu,sans-serif;
+    }
+    #scroll-port{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      h1{
+        color: purple;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+    #container{
+      width: 600px;
+      height: 425px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+
+    }
+    #imageList{
+      display: flex;
+      height: 400px;
+    }
+    .card{
+      scroll-snap-align: start;
+      position: relative;
+      display: flex;
+      .imageTitle{
+        position: sticky;
+        width: 60px;
+        height: 400px;
+        font-size: 2rem;
+        font-weight: bold;
+        background-color: purple;
+        padding-bottom: 10px;
+        left: 0;
+        bottom: 0;
+        writing-mode: vertical-lr;
+        text-align: center;
+      }
+      img{
+        width: 600px;
+        height: 400px;
+      }
+    }
+
   </style>
 </head>
 <body>
 <div id = "scroll-port">
+  <h1>Scroll Images</h1>
   <div id="container">
     <div id="imageList">
       <div class="card">
-        <div class="imageTitle">Lotus</div>
-        <img src="" alt="Lotus flower image">
+        <div class="imageTitle">Lotus Flower</div>
+        <img src="img/flower.jpg" alt="Lotus flower image">
+      </div>
+      <div class="card">
+        <div class="imageTitle">Rabbit</div>
+        <img src="img/rabbit.jpg" alt="Rabbit image">
+      </div>
+      <div class="card">
+        <div class="imageTitle">Nature</div>
+        <img src="img/nature.jpg" alt="Rabbit image">
       </div>
     </div>
   </div>
